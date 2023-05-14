@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 struct ListNode{
 	int data;
 	struct ListNode *next;
@@ -13,7 +14,7 @@ struct ListNode *swapsTwoAdjacentNode(struct ListNode *head);
 void display(struct ListNode *head);
 
 int main(){
-	int nbrNode,input,s;
+	int nbrNode,input;
 	nbrNode=ReadNumberOfNode();
 	for(int i=0;i<nbrNode;i++){
 		input=ReadInput();
@@ -21,13 +22,6 @@ int main(){
 	}
 	p=head;
     display(swapsTwoAdjacentNode(head));
-}
-
-int ReadNumberOfrevers()
-{int l;
-  printf("enter number of reverse: ");
-  scanf("%d",&l);
-  return l;
 }
 
 int ReadNumberOfNode()
@@ -62,21 +56,6 @@ void AddNodeEnd(int y)
   }
 }
 
-
-int length(struct ListNode *head){
-	if(head==NULL){
-		printf("The list is empty");
-		return -1;                 
-	}else{
-		p=head;int c=0;
-		while(p!=NULL){
-			c++;
-			p=p->next;
-		}
-		return c;
-	}
-}
-
 void display(struct ListNode *head){
 	p=head;
 	while(p!=NULL){
@@ -85,7 +64,7 @@ void display(struct ListNode *head){
 	}
 }
 
-struct ListNode *swapsTwoAdjacentNode(struct ListNode *head){int s;
+struct ListNode *swapsTwoAdjacentNode(struct ListNode *head){
 	if(p->next==NULL){
 		return head;
 	}else{
